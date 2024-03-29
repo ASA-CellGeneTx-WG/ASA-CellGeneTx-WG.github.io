@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - about.qmd
+    - index.qmd
+    - publications.qmd
+    - subteams.qmd
+
+website:
+  title: "Cell and Gene Therapy working group"
+  navbar:
+    background: success
+    left:
+    - text: "About"
+      menu:
+        - text: "About"
+          href: index.html
+    - text: "Sub-Teams"
+      href: subteams.html
+    - text: "Publications"
+      href: publications.html
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+editor: source
+
