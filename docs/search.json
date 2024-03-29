@@ -7,6 +7,13 @@
     "text": "Welcome to the homepage of Cell and Gene Therapy Scientific Working Group (SWG)!\nGenetically engineered cell and gene therapies (CGT) constitute a powerful new class of therapeutic agents that offer hope for curative responses in patients with devastating diseases. Although the U.S. Food and Drug Administration has approved multiple CGT products for cancer and rare disease indications, the current development of CGT still presents several unique statistical challenges. These include small sample sizes, design of dose finding studies to optimize dose selection, identification of patient subgroups in heterogeneous patient populations and treatment response, study design to assess long-term therapeutic safety and benefits, implementation of the estimand framework, linking clinical trial data to real world evidence to provide a comprehensive view of a patient’s journey, innovative randomized phase 3 study design, and manufacturing related issues. To overcome these challenges and advance the field of CGT, it is critical to bring together a collective group of statistical experts to collaborate on sharing experiences and developing strategic solutions to improve patient outcomes.\nFor more information or to get involved in CGT SWG, please contact one of the co-chairs:\nAlan Chiang, Lyell (achiang@lyell.com)\nZhenzhen Xu, FDA (zhenzhen.xu@fda.hhs.gov or zxu@post.harvard.edu)\nDaniel Li, BMS (daniel.li1@bms.com)\n\nLink to this page\nLink to this page: &lt;&gt;."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Website",
+    "section": "",
+    "text": "Website for successR.\nIndex file to build website is _site.yml.\nUse rmarkdown::render_site() or click on “Build” –&gt; “Build site” to build the website.\nSee https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html for background information."
+  },
+  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications of the group",
