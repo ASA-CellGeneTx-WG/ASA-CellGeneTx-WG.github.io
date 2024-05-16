@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Cell and Gene Therapy working group",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Welcome to the homepage of Cell and Gene Therapy Scientific Working Group (SWG)!\nGenetically engineered cell and gene therapies (CGT) constitute a powerful new class of therapeutic agents that offer hope for curative responses in patients with devastating diseases. Although the U.S. Food and Drug Administration has approved multiple CGT products for cancer and rare disease indications, the current development of CGT still presents several unique statistical challenges. These include small sample sizes, design of dose finding studies to optimize dose selection, identification of patient subgroups in heterogeneous patient populations and treatment response, study design to assess long-term therapeutic safety and benefits, implementation of the estimand framework, linking clinical trial data to real world evidence to provide a comprehensive view of a patient’s journey, innovative randomized phase 3 study design, and manufacturing related issues. To overcome these challenges and advance the field of CGT, it is critical to bring together a collective group of statistical experts to collaborate on sharing experiences and developing strategic solutions to improve patient outcomes.\nFor more information or to get involved in CGT SWG, please contact one of the co-chairs:\nAlan Chiang, Lyell (achiang@lyell.com)\nZhenzhen Xu, FDA (zhenzhen.xu@fda.hhs.gov or zxu@post.harvard.edu)\nDaniel Li, BMS (daniel.li1@bms.com)\n\nLink to this page\nLink to this page: &lt;&gt;."
+    "text": "Other estimand working groups\n\nASGCT - American Society of Gene & Cell Therapy.\nFDA Cellular & Gene Therapy Products\nFDA Cellular & Gene Therapy Guidances\nEMA Guidelines\n\nSee also the publications tab.\n\n\nReferences"
   },
   {
     "objectID": "publications.html",
@@ -12,5 +12,75 @@
     "title": "Publications of the group",
     "section": "",
     "text": "Here we list the publications that the group has written or contributed to.\n\nAccepted or published\n\n\nSubmitted"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Website",
+    "section": "",
+    "text": "Website for successR.\nIndex file to build website is _site.yml.\nUse rmarkdown::render_site() or click on “Build” –&gt; “Build site” to build the website.\nSee https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html for background information."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cell and Gene Therapy working group",
+    "section": "",
+    "text": "Welcome to the homepage of American Statistical Association (ASA) Cell and Gene Therapy Scientific Working Group (SWG)!\nGenetically engineered cell and gene therapies (CGT) constitute a powerful new class of therapeutic agents that offer hope for curative responses in patients with devastating diseases. Although the U.S. Food and Drug Administration has approved multiple CGT products for cancer and rare disease indications, the current development of CGT still presents several unique statistical challenges. These include small sample sizes, design of dose finding studies to optimize dose selection, identification of patient subgroups in heterogeneous patient populations and treatment response, study design to assess long-term therapeutic safety and benefits, implementation of the estimand framework, linking clinical trial data to real world evidence to provide a comprehensive view of a patient’s journey, innovative randomized phase 3 study design, and manufacturing related issues. To overcome these challenges and advance the field of CGT, it is critical to bring together a collective group of statistical experts to collaborate on sharing experiences and developing strategic solutions to improve patient outcomes.\nFor more information or to get involved in CGT SWG, please contact one of the co-chairs:\nAlan Chiang, Lyell (achiang@lyell.com)\nZhenzhen Xu, FDA (zhenzhen.xu@fda.hhs.gov or zxu@post.harvard.edu)\nDaniel Li, BMS (daniel.li1@bms.com)\n\nLink to this page\nLink to this page: &lt;&gt;."
+  },
+  {
+    "objectID": "subteams.html",
+    "href": "subteams.html",
+    "title": "Sub-teams",
+    "section": "",
+    "text": "Lead: Shihua Wen (Novartis)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nZhenzhen\nXu\nFDA\nNA\n\n\nKhadija\nRantell\nMHRA\nNA\n\n\nLina\nYang\nNovartis\nNA\n\n\nShihua\nWen\nNovartis\nNA\n\n\nYeonhee\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "subteams.html#real-world-evidencereal-world-data-rwerwd",
+    "href": "subteams.html#real-world-evidencereal-world-data-rwerwd",
+    "title": "Sub-teams",
+    "section": "",
+    "text": "Lead: Shihua Wen (Novartis)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nZhenzhen\nXu\nFDA\nNA\n\n\nKhadija\nRantell\nMHRA\nNA\n\n\nLina\nYang\nNovartis\nNA\n\n\nShihua\nWen\nNovartis\nNA\n\n\nYeonhee\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "subteams.html#estimand",
+    "href": "subteams.html#estimand",
+    "title": "Sub-teams",
+    "section": "Estimand",
+    "text": "Estimand\nLead: Nicolas Ballarini (Novartis)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nYiran\nHu\nAbbvie\nNA\n\n\nAlessandro\nPrevitali\nBms\nNA\n\n\nKhadija\nRantell\nMHRA\nNA\n\n\nNicolas\nBallarini\nNovartis\nNA\n\n\nShihua\nWen\nNovartis\nNA\n\n\nAvery\nMcIntosh\nPfizer\nNA"
+  },
+  {
+    "objectID": "subteams.html#dose-finding",
+    "href": "subteams.html#dose-finding",
+    "title": "Sub-teams",
+    "section": "Dose Finding",
+    "text": "Dose Finding\nLead: Rong Liu (Regeneron)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nDaniel\nLi\nBms\nNA\n\n\nRevathi\nAnanthakrishnan\nBms\nNA\n\n\nAlly\nHe\nCrisprtx\nNA\n\n\nAndrew\nLewandowski\nNovartis\nNA\n\n\nBambang\nAdiwijaya\nNovartis\nNA\n\n\nRong\nLiu\nRegeneron\nNA"
+  },
+  {
+    "objectID": "subteams.html#cmc",
+    "href": "subteams.html#cmc",
+    "title": "Sub-teams",
+    "section": "CMC",
+    "text": "CMC\nLead: Alan Chiang (Lyell)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nSangwook\nChoi\nBms\nNA\n\n\nBill\nPikounis\nJNJ\nNA\n\n\nJose\nRamirez\nKitepharma\nNA\n\n\nAlan\nChiang\nLyell\nNA\n\n\nLina\nYang\nNovartis\nNA"
+  },
+  {
+    "objectID": "subteams.html#outreach",
+    "href": "subteams.html#outreach",
+    "title": "Sub-teams",
+    "section": "Outreach",
+    "text": "Outreach\nLead: Patricia Anderson (Iconplc)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nRevathi\nAnanthakrishnan\nBms\nNA\n\n\nPatricia\nAnderson\nIconplc\nNA\n\n\nAlan\nChiang\nLyell\nNA\n\n\nKhadija\nRantell\nMHRA\nNA\n\n\nNicolas\nBallarini\nNovartis\nNA\n\n\nShihua\nWen\nNovartis\nNA"
+  },
+  {
+    "objectID": "subteams.html#trial-design-subteam",
+    "href": "subteams.html#trial-design-subteam",
+    "title": "Sub-teams",
+    "section": "Trial Design Subteam",
+    "text": "Trial Design Subteam\nLead: Weidong Zang (Sana)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nDaniel\nLi\nBms\nNA\n\n\nRevathi\nAnanthakrishnan\nBms\nNA\n\n\nZhenzhen\nXu\nFDA\nNA\n\n\nPatricia\nAnderson\nIconplc\nNA\n\n\nEvgeny\nDegtyarev\nNovartis\nNA\n\n\nNicolas\nBallarini\nNovartis\nNA"
+  },
+  {
+    "objectID": "subteams.html#ltfu",
+    "href": "subteams.html#ltfu",
+    "title": "Sub-teams",
+    "section": "LTFU",
+    "text": "LTFU\nLead: Shihua Wen (Novartis)\nObjective:\n\n\n\n\nFirstname\nLastname\nInstitution\nLocation\n\n\n\n\nPatricia\nAnderson\nIconplc\nNA\n\n\nAlan\nChiang\nLyell\nNA\n\n\nAlex\nSverdlov\nNovartis\nNA\n\n\nShihua\nWen\nNovartis\nNA"
   }
 ]

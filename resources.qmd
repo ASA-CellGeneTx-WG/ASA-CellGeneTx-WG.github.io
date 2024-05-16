@@ -1,0 +1,25 @@
+---
+title: "Resources"
+date-modified: last-modified
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    self_contained: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+# Other estimand working groups
+
+
+- [ASGCT - American Society of Gene & Cell Therapy](https://www.asgct.org/).
+- [FDA Cellular & Gene Therapy Products](https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products)
+- [FDA Cellular & Gene Therapy Guidances](https://www.fda.gov/vaccines-blood-biologics/biologics-guidances/cellular-gene-therapy-guidances)
+- [EMA Guidelines](https://www.ema.europa.eu/en/human-regulatory-overview/research-and-development/scientific-guidelines/multidisciplinary-guidelines/multidisciplinary-gene-therapy)
+
+See also the [publications tab](publications.html).
+
+# References
+
