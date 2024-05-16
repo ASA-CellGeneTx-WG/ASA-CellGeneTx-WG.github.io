@@ -11,17 +11,66 @@ output:
     toc_float: yes
 ---
 
-# Real World Evidence/Real World Data (RWE/RWD)
 
-# Estimand
 
-# Dose Finding
+```{r setup, include=FALSE}
+# ## load packages
+packs.html <- c("knitr", "pander", "reporttools", "dplyr", "readxl")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
 
-# CMC
+knitr::opts_chunk$set(echo = TRUE)
+panderOptions('table.alignment.default', function(df){ifelse(sapply(df, is.numeric), 'right', 'left')})
 
-# LTFU
+path <- getwd()
 
-# Trial Design Subteam
+## =================================================================
+## functions
+## =================================================================
+source(file = paste(path, "/tools/mydisp.r", sep = ""))
+source(file = paste(path, "/tools/lead.r", sep = ""))
+source(file = paste(path, "/tools/obj.r", sep = ""))
 
-# Outreach
+## =================================================================
+## member list
+## =================================================================
+email <- as.data.frame(read_excel(paste(path, "/data/members.xlsx", sep = ""), col_types = NULL))
+objectives <- as.data.frame(read_excel(paste(path, "/data/objectives.xlsx", sep = ""), col_types = NULL))
+active <- objectives$active
+
+## Current month
+today <- Sys.Date()
+tod <- format(today, format = "%d %B %Y")
+
+## task forces
+taskforces <- c("RWE", 
+                "Estimand",	
+                "DoseFinding",
+                "CMC",	
+                "ContEd",	
+                "TrialDesign",	
+                "LTFU")
+taskforces_names <- c("Real World Evidence/Real World Data (RWE/RWD)",
+                      "Estimand",
+                      "Dose Finding",
+                      "CMC",
+                      "Outreach",
+                      "Trial Design Subteam",
+                      "LTFU")
+```
+
+
+
+```{r, label = "activenew", echo = FALSE, message = FALSE, warning = FALSE, results = "asis"}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+out2 <- NULL
+for (i in 1:length(taskforces)){
+  
+  if (active[i] == 2){
+    out2 <- c(out2, knit_expand('tools/taskforce.Rmd'))
+  }
+}
+
+# the "knit" command somehow produces unwanted output, this is why I assign its output to a and use a separate chunk to display a
+cat(knit(text = unlist(paste(out2, collapse = '\n')), quiet = TRUE))
+```
 
