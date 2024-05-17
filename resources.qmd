@@ -11,8 +11,7 @@ output:
     toc_float: yes
 ---
 
-# Other estimand working groups
-
+# Websites of interest
 
 - [ASGCT - American Society of Gene & Cell Therapy](https://www.asgct.org/).
 - [FDA Cellular & Gene Therapy Products](https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products)
