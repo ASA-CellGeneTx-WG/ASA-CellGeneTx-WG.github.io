@@ -20,5 +20,3 @@ output:
 
 See also the [publications tab](publications.html).
 
-# References
-
