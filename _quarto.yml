@@ -31,6 +31,3 @@ format:
     toc: true
 
 editor: source
-
-execute:
-  freeze: auto
