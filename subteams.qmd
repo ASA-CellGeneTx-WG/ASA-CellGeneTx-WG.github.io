@@ -55,7 +55,7 @@ taskforces_names <- c("Real World Evidence/Real World Data (RWE/RWD)",
                       "Estimand",
                       "Dose Finding",
                       "CMC",
-                      "Outreach",
+                      "Continuing Education and Outreach",
                       "Trial Design Subteam",
                       "LTFU")
 ```
