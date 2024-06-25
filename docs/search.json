@@ -32,14 +32,14 @@
     "href": "subteams.html",
     "title": "Sub-teams",
     "section": "",
-    "text": "Lead: Shihua Wen (Novartis)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nNA\nNA"
+    "text": "Lead: Khadija Rantell (MHRA)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
   },
   {
     "objectID": "subteams.html#real-world-evidencereal-world-data-rwerwd",
     "href": "subteams.html#real-world-evidencereal-world-data-rwerwd",
     "title": "Sub-teams",
     "section": "",
-    "text": "Lead: Shihua Wen (Novartis)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nNA\nNA"
+    "text": "Lead: Khadija Rantell (MHRA)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
   },
   {
     "objectID": "subteams.html#estimand",
@@ -53,7 +53,7 @@
     "href": "subteams.html#dose-finding",
     "title": "Sub-teams",
     "section": "Dose Finding",
-    "text": "Dose Finding\nLead: Revathi Ananthakrishnan (BMS), Rong Liu (Regeneron)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nAlly\nHe\nCrisprtx\n\n\nAndrew\nLewandowski\nNovartis\n\n\nBambang\nAdiwijaya\nNovartis\n\n\nRong\nLiu\nRegeneron"
+    "text": "Dose Finding\nLead: Revathi Ananthakrishnan (BMS), Rong Liu (Regeneron)\nObjective: To make the biopharmaceutical community aware of the dose finding methods and designs that CGT development can already adopt and identify improvements in these methods for the future as well as key challenges in dose finding in CGT development.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nAlly\nHe\nCrisprtx\n\n\nAndrew\nLewandowski\nNovartis\n\n\nBambang\nAdiwijaya\nNovartis\n\n\nRong\nLiu\nRegeneron"
   },
   {
     "objectID": "subteams.html#chemistry-manufacturing-and-controls-cmc",
@@ -81,6 +81,13 @@
     "href": "subteams.html#long-term-follow-up-ltfu",
     "title": "Sub-teams",
     "section": "Long-Term Follow Up (LTFU)",
-    "text": "Long-Term Follow Up (LTFU)\nLead: Khadija Rantell (MHRA)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nAlex\nSverdlov\nNovartis\n\n\nShihua\nWen\nNovartis"
+    "text": "Long-Term Follow Up (LTFU)\nLead: Shihua Wen (Novartis)\nObjective: Promote statistical thinking and best practices in the design and conduct of long-term follow-up studies for cell and gene therapy products through sound statistical methodology and innovative technology.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nAlex\nSverdlov\nNovartis\n\n\nShihua\nWen\nNovartis"
+  },
+  {
+    "objectID": "subteams.html#data-science-and-artificial-intelligence",
+    "href": "subteams.html#data-science-and-artificial-intelligence",
+    "title": "Sub-teams",
+    "section": "Data Science and Artificial Intelligence",
+    "text": "Data Science and Artificial Intelligence\nLead: Qinghua Song (Kitepharma), Md Shamsuzzaman (BMS)\nObjective: Understand the opportunities and challenges associated Data Science and application of AI and Data Science in CGT (long term)\nServe as key opinion leaders in CGT Data Science & AI within biopharmaceutical communities (long term)​\nShare presentation and publication (short term)\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nMd\nShamsuzzaman\nBMS\n\n\nZhenzhen\nXu\nFDA\n\n\nJames\nWhitmore\nKitepharma\n\n\nQinghua\nSong\nKitepharma\n\n\nAlan\nChiang\nLyell"
   }
 ]
