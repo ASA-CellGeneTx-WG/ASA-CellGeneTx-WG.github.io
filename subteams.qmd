@@ -50,14 +50,16 @@ taskforces <- c("RWE",
                 "CMC",	
                 "ContEd",	
                 "TrialDesign",	
-                "LTFU")
+                "LTFU",	
+                "DSAI")
 taskforces_names <- c("Real World Evidence/Real World Data (RWE/RWD)",
                       "Estimand",
                       "Dose Finding",
                       "Chemistry, Manufacturing, and Controls (CMC)",
                       "Continuing Education and Outreach",
                       "Trial Design",
-                      "Long-Term Follow Up (LTFU)")
+                      "Long-Term Follow Up (LTFU)",
+                      "Data Science and Artificial Intelligence")
 ```
 
 
