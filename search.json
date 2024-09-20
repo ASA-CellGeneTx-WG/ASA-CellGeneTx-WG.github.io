@@ -7,18 +7,11 @@
     "text": "Websites of interest\n\nASGCT - American Society of Gene & Cell Therapy.\nFDA Cellular & Gene Therapy Products\nFDA Cellular & Gene Therapy Guidances\nEMA Guidelines\n\nSee also the publications tab."
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications of the group",
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations of the group",
     "section": "",
-    "text": "Here we list the publications that the group has written or contributed to.\n\nAccepted or published\nLi, D., Xu, Z., Wen, S., Ananthakrishnan, R., Kim, Y., Rantell, K.R., Anderson, P., Whitmore, J. and Chiang, A., 2024. Challenges and Lessons Learned in Autologous Chimeric Antigen Receptor T-Cell Therapy Development from a Statistical Perspective. Therapeutic Innovation & Regulatory Science, pp.1-14. | doi |\nMcIntosh, A. and Sverdlov, O. eds., 2024. Development of Gene Therapies: Strategic, Scientific, Regulatory, and Access Considerations. CRC Press.\n\n\nSubmitted"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About This Website",
-    "section": "",
-    "text": "Website for successR.\nIndex file to build website is _site.yml.\nUse rmarkdown::render_site() or click on “Build” –&gt; “Build site” to build the website.\nSee https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html for background information."
+    "text": "Here we list the presentations that the group has contributed to."
   },
   {
     "objectID": "index.html",
@@ -28,66 +21,80 @@
     "text": "Welcome to the homepage of American Statistical Association (ASA) Cell and Gene Therapy Scientific Working Group (SWG)!\nGenetically engineered cell and gene therapies (CGT) constitute a powerful new class of therapeutic agents that offer hope for curative responses in patients with devastating diseases. Although the U.S. Food and Drug Administration has approved multiple CGT products for cancer and rare disease indications, the current development of CGT still presents several unique statistical challenges. These include small sample sizes, design of dose finding studies to optimize dose selection, identification of patient subgroups in heterogeneous patient populations and treatment response, study design to assess long-term therapeutic safety and benefits, implementation of the estimand framework, linking clinical trial data to real world evidence to provide a comprehensive view of a patient’s journey, innovative randomized phase 3 study design, and manufacturing related issues. To overcome these challenges and advance the field of CGT, it is critical to bring together a collective group of statistical experts to collaborate on sharing experiences and developing strategic solutions to improve patient outcomes.\nFor more information or to get involved in CGT SWG, please contact one of the co-chairs:\nAlan Chiang, Lyell (achiang@lyell.com)\nZhenzhen Xu, FDA (zhenzhen.xu@fda.hhs.gov or zxu@post.harvard.edu)\nDaniel Li, BMS (daniel.li1@bms.com)\n\nLink to this page\nLink to this page: &lt;&gt;."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Website",
+    "section": "",
+    "text": "Website for successR.\nIndex file to build website is _site.yml.\nUse rmarkdown::render_site() or click on “Build” –&gt; “Build site” to build the website.\nSee https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html for background information."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications of the group",
+    "section": "",
+    "text": "Here we list the publications that the group has written or contributed to.\n\nAccepted or published\nLi, D., Xu, Z., Wen, S., Ananthakrishnan, R., Kim, Y., Rantell, K.R., Anderson, P., Whitmore, J. and Chiang, A., 2024. Challenges and Lessons Learned in Autologous Chimeric Antigen Receptor T-Cell Therapy Development from a Statistical Perspective. Therapeutic Innovation & Regulatory Science, pp.1-14. | doi |\nMcIntosh, A. and Sverdlov, O. eds., 2024. Development of Gene Therapies: Strategic, Scientific, Regulatory, and Access Considerations. CRC Press.\n\n\nSubmitted"
+  },
+  {
     "objectID": "subteams.html",
     "href": "subteams.html",
     "title": "Sub-teams",
     "section": "",
-    "text": "Lead: Khadija Rantell (MHRA), Shihua Wen (Novartis)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
+    "text": "Lead: Khadija Rantell (MHRA), Shihua Wen (Novartis)\nObjective: The objective of this WG is to develop recommendations for generating robust RWE/RWD to support regulatory approval for CGT products. Specifically, the WG will review methods for direct and indirect comparisons using RWD and reflects on the opportunities and challenges of these approaches in the setting of CGT drug development using case studies as examples.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
   },
   {
     "objectID": "subteams.html#real-world-evidencereal-world-data-rwerwd",
     "href": "subteams.html#real-world-evidencereal-world-data-rwerwd",
     "title": "Sub-teams",
     "section": "",
-    "text": "Lead: Khadija Rantell (MHRA), Shihua Wen (Novartis)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
+    "text": "Lead: Khadija Rantell (MHRA), Shihua Wen (Novartis)\nObjective: The objective of this WG is to develop recommendations for generating robust RWE/RWD to support regulatory approval for CGT products. Specifically, the WG will review methods for direct and indirect comparisons using RWD and reflects on the opportunities and challenges of these approaches in the setting of CGT drug development using case studies as examples.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nZhenzhen\nXu\nFDA\n\n\nKhadija\nRantell\nMHRA\n\n\nLina\nYang\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nYeonhee\nKim\nNA"
   },
   {
     "objectID": "subteams.html#estimand",
     "href": "subteams.html#estimand",
     "title": "Sub-teams",
     "section": "Estimand",
-    "text": "Estimand\nLead: Nicolas Ballarini (Novartis)\nObjective: The objective of this WG is to promote the concept of estimands and establish a harmonized estimand framework for the clinical development of Cell and Gene Therapies (CGT). Specifically, the WG’s aim is to identify and address the unique challenges posed by intercurrent events in CGT development, and formulate appropriate strategies for their handling.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nYiran\nHu\nAbbvie\n\n\nCong\nHang\nAstellas\n\n\nAlessandro\nPrevitali\nBMS\n\n\nKhadija\nRantell\nMHRA\n\n\nAlex\nSverdlov\nNovartis\n\n\nNicolas\nBallarini\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nAvery\nMcIntosh\nPfizer"
+    "text": "Estimand\nLead: Nicolas Ballarini (Novartis)\nObjective: The objective of this WG is to promote the concept of estimands and establish a harmonized estimand framework for the clinical development of Cell and Gene Therapies (CGT). Specifically, the WG’s aim is to identify and address the unique challenges posed by intercurrent events in CGT development, and formulate appropriate strategies for their handling.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nYiran\nHu\nAbbvie\n\n\nCong\nHan\nAstellas\n\n\nAlessandro\nPrevitali\nBMS\n\n\nKhadija\nRantell\nMHRA\n\n\nAlex\nSverdlov\nNovartis\n\n\nNicolas\nBallarini\nNovartis\n\n\nShihua\nWen\nNovartis\n\n\nAvery\nMcIntosh\nPfizer"
   },
   {
     "objectID": "subteams.html#dose-finding",
     "href": "subteams.html#dose-finding",
     "title": "Sub-teams",
     "section": "Dose Finding",
-    "text": "Dose Finding\nLead: Revathi Ananthakrishnan (BMS), Rong Liu (Regeneron)\nObjective: To make the biopharmaceutical community aware of the dose finding methods and designs that CGT development can already adopt and identify improvements in these methods for the future as well as key challenges in dose finding in CGT development.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nAlly\nHe\nCrisprtx\n\n\nAndrew\nLewandowski\nNovartis\n\n\nBambang\nAdiwijaya\nNovartis\n\n\nRong\nLiu\nRegeneron"
+    "text": "Dose Finding\nLead: Revathi Ananthakrishnan (BMS), Rong Liu (Regeneron)\nObjective: To make the biopharmaceutical community aware of the dose finding methods and designs that CGT development can already adopt and identify improvements in these methods for the future as well as key challenges in dose finding in CGT development.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nCong\nHan\nAstellas\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nFrank\nShen\nBMS\n\n\nHao\nSun\nBMS\n\n\nAlly\nHe\nCrisprtx\n\n\nAlan\nChiang\nLyell\n\n\nAndrew\nLewandowski\nNovartis\n\n\nBambang\nAdiwijaya\nNovartis\n\n\nRong\nLiu\nRegeneron"
   },
   {
     "objectID": "subteams.html#chemistry-manufacturing-and-controls-cmc",
     "href": "subteams.html#chemistry-manufacturing-and-controls-cmc",
     "title": "Sub-teams",
     "section": "Chemistry, Manufacturing, and Controls (CMC)",
-    "text": "Chemistry, Manufacturing, and Controls (CMC)\nLead: Sangwook Choi (BMS)\nObjective: To identify key CMC challenges in CGT development and to serve as key opinion leaders in CGT CMC within biopharmaceutical communities\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nSangwook\nChoi\nBMS\n\n\nBill\nPikounis\nJNJ\n\n\nJose\nRamirez\nKitepharma\n\n\nAlan\nChiang\nLyell\n\n\nLina\nYang\nNovartis"
+    "text": "Chemistry, Manufacturing, and Controls (CMC)\nLead: Sangwook Choi (BMS)\nObjective: To identify key CMC challenges in CGT development and to serve as key opinion leaders in CGT CMC within biopharmaceutical communities\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nSangwook\nChoi\nBMS\n\n\nBill\nPikounis\nJNJ\n\n\nJose\nRamirez\nKitepharma\n\n\nAlan\nChiang\nLyell\n\n\nLina\nYang\nNovartis"
   },
   {
     "objectID": "subteams.html#continuing-education-and-outreach",
     "href": "subteams.html#continuing-education-and-outreach",
     "title": "Sub-teams",
     "section": "Continuing Education and Outreach",
-    "text": "Continuing Education and Outreach\nLead: Patricia Anderson (ICON plc)\nObjective: To promote best practices in the design and analysis of cell and gene therapy trials through knowledge sharing of current global development in the field with focus on the following:\n\nTypes of cell and gene therapies (what they are, how they work, what are the important considerations for statisticians)\nNew and updated regulatory guidance\nNew therapy approvals\n\nIndustry hot topics or safety findings (eg, secondary malignancy investigations, new safety AEs)\n\nIn addition, the subteam supports requests for short courses and other presentations as well as general outreach.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nCong\nHang\nAstellas\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nKhadija\nRantell\nMHRA\n\n\nNicolas\nBallarini\nNovartis\n\n\nShihua\nWen\nNovartis"
+    "text": "Continuing Education and Outreach\nLead: Patricia Anderson (ICON plc)\nObjective: To promote best practices in the design and analysis of cell and gene therapy trials through knowledge sharing of current global development in the field with focus on the following:\n\nTypes of cell and gene therapies (what they are, how they work, what are the important considerations for statisticians)\nNew and updated regulatory guidance\nNew therapy approvals\n\nIndustry hot topics or safety findings (eg, secondary malignancy investigations, new safety AEs)\n\nIn addition, the subteam supports requests for short courses and other presentations as well as general outreach.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nCong\nHan\nAstellas\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nKhadija\nRantell\nMHRA\n\n\nNicolas\nBallarini\nNovartis\n\n\nShihua\nWen\nNovartis"
   },
   {
     "objectID": "subteams.html#trial-design",
     "href": "subteams.html#trial-design",
     "title": "Sub-teams",
     "section": "Trial Design",
-    "text": "Trial Design\nLead: Weidong Zang (Sana)\nObjective: NA\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nZhenzhen\nXu\nFDA\n\n\nPatricia\nAnderson\nICON plc\n\n\nEvgeny\nDegtyarev\nNovartis\n\n\nNicolas\nBallarini\nNovartis"
+    "text": "Trial Design\nLead: Weidong Zang (Sana)\nObjective: The objective of this subgroup is to research and evaluate clinical trial design options in CGT development focusing on registrational trials. Specifically, we aim to explore new ideas and innovative approaches to provide insights, best practices, and recommendations to CGT drug development community on effective designs to accelerate drug approvals in various therapeutic areas including but not limited to oncology, autoimmune, and rare genetic disorders.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nRevathi\nAnanthakrishnan\nBMS\n\n\nZhenzhen\nXu\nFDA\n\n\nPatricia\nAnderson\nICON plc\n\n\nEvgeny\nDegtyarev\nNovartis\n\n\nNicolas\nBallarini\nNovartis"
   },
   {
     "objectID": "subteams.html#long-term-follow-up-ltfu",
     "href": "subteams.html#long-term-follow-up-ltfu",
     "title": "Sub-teams",
     "section": "Long-Term Follow Up (LTFU)",
-    "text": "Long-Term Follow Up (LTFU)\nLead: Shihua Wen (Novartis)\nObjective: Promote statistical thinking and best practices in the design and conduct of long-term follow-up studies for cell and gene therapy products through sound statistical methodology and innovative technology.\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nAlex\nSverdlov\nNovartis\n\n\nShihua\nWen\nNovartis"
+    "text": "Long-Term Follow Up (LTFU)\nLead: Shihua Wen (Novartis)\nObjective: Promote statistical thinking and best practices in the design and conduct of long-term follow-up studies for cell and gene therapy products through sound statistical methodology and innovative technology.\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nPatricia\nAnderson\nICON plc\n\n\nAlan\nChiang\nLyell\n\n\nAlex\nSverdlov\nNovartis\n\n\nShihua\nWen\nNovartis"
   },
   {
     "objectID": "subteams.html#data-science-and-artificial-intelligence",
     "href": "subteams.html#data-science-and-artificial-intelligence",
     "title": "Sub-teams",
     "section": "Data Science and Artificial Intelligence",
-    "text": "Data Science and Artificial Intelligence\nLead: Qinghua Song (Kitepharma), Md Shamsuzzaman (BMS)\nObjective: Understand the opportunities and challenges associated Data Science and application of AI and Data Science in CGT (long term)\nServe as key opinion leaders in CGT Data Science & AI within biopharmaceutical communities (long term)​\nShare presentation and publication (short term)\n\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nMd\nShamsuzzaman\nBMS\n\n\nZhenzhen\nXu\nFDA\n\n\nJames\nWhitmore\nKitepharma\n\n\nQinghua\nSong\nKitepharma\n\n\nAlan\nChiang\nLyell"
+    "text": "Data Science and Artificial Intelligence\nLead: Qinghua Song (Kitepharma), Md Shamsuzzaman (BMS)\nObjective: Understand the opportunities and challenges associated Data Science and application of AI and Data Science in CGT (long term)\nServe as key opinion leaders in CGT Data Science & AI within biopharmaceutical communities (long term)​\nShare presentation and publication (short term)\n\n\n\nFirstname\nLastname\nInstitution\n\n\n\n\nDaniel\nLi\nBMS\n\n\nMd\nShamsuzzaman\nBMS\n\n\nZhenzhen\nXu\nFDA\n\n\nJames\nWhitmore\nKitepharma\n\n\nQinghua\nSong\nKitepharma\n\n\nAlan\nChiang\nLyell"
   }
 ]
