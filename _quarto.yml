@@ -5,6 +5,7 @@ project:
     - about.qmd
     - index.qmd
     - publications.qmd
+    - presentations.qmd
     - subteams.qmd
     - resources.qmd
 
@@ -21,6 +22,8 @@ website:
       href: subteams.html
     - text: "Publications"
       href: publications.html
+    - text: "Presentations"
+      href: presentations.html
     - text: "Resources"
       href: resources.html
 
