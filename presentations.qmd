@@ -13,49 +13,39 @@ output:
 
 Here we list the presentations that the group has contributed to.
 
-1. **Event:** Joint Statistical Meetings (JSM)   (Upcoming)
-   **Year:** 2025  
-   **Location:** Nashville, TN  
-   **Presentation Title:** Statistical Considerations in Cell and Gene Therapy Development  
-   **Dates:** August 2 – 5, 2025
-   
-2. **Event:** ASA Biopharmaceutical Section Regulatory-Industry Statistics Workshop   
-   **Year:** 2024  
-   **Presentation Title:** Cell and Gene Therapy (CGT): Introduction and Overview of Important Regulatory, Statistical and Operational Considerations by Patricia Anderson, Revathi Ananthakrishnan, Shihua Wen  
-   **Location:** Rockville, MD  
-   **Date:** Sept 25, 2024  
-   [Link](https://ww3.aievolution.com/AMSTATevents/index.cfm?do=ev.viewEv&ev=3285)
 
-3. **Event:** ASA Biopharmaceutical Section Regulatory-Industry Statistics Workshop  
-   **Year:** 2024  
-   **Presentation Title:** PS4 Back to the Future: What's New and Coming Next in Cell and Gene Therapy  
-   **Date:** 09/26/2024: 1:15 PM - 2:30 PM EDT  
-   [Link](https://ww3.aievolution.com/AMSTATevents/index.cfm?do=ev.viewEv&ev=3471)
-
-4. **Event:** JSMAnnual2024  
-   **Presentation Title:** Lessons Learned from the Recent Cell and Gene Therapy Product Development and Approval by Zhenzhen Xu, Daniel Li, James Whitmore, Khadija Rantell, Alan Chiang, Joshua Chen, Alan Chiang  
-   **Date:** 2024, Monday, Aug 5: 2:00 PM - 3:50 PM  
-   [Link](https://ww3.aievolution.com/JSMAnnual2024/Events/viewEv?ev=1769)
+```{r, message=FALSE, echo=FALSE, warning=FALSE, results='asis'}
+library(readxl)
+path <- getwd()
+## =================================================================
+## member list
+## =================================================================
+df <- as.data.frame(read_excel(paste(path, "/data/presentations.xlsx", sep = ""), col_types = NULL))
 
 
-5. **Event:** ASA Philadelphia chapter  
-   **Year:** 2024  
-   **Presentation Title:** Development of Gene Therapies: Thoughts on Innovation and Best Practices for Biostatistics by Avery McIntosh, PhD and Oleskandr Sverdlov, PhD  
-   **Date:** November 14, 2024 Webinar
+print_data <- function(df){
+  n_row <- nrow(df)
+  for (ii in 1:n_row) {
+    if (!is.na(df$LINK[ii])){
+      cat(glue::glue("{ii}. **Event**: {df$EVENT[ii]}  
+     **Year**: {df$YEAR[ii]}  
+     **Title**: {df$`PRESENTATION TITLE`[ii]} by {df$`SPEAKER/AUTHOR/ORGANIZER`[ii]}  
+     **Location**: {df$LOCATION[ii]}  
+     [**Link**]({df$LINK[ii]})  
+     \n\n")
+      )
+    } else {
+      cat(glue::glue("{ii}. **Event**: {df$EVENT[ii]}  
+     **Year**: {df$YEAR[ii]}  
+     **Title**: {df$`PRESENTATION TITLE`[ii]} by {df$`SPEAKER/AUTHOR/ORGANIZER`[ii]}  
+     **Location**: {df$LOCATION[ii]}
+     \n\n")
+      )
+    }
+  }
+}
 
+# run the function on your dataframe
+print_data(df)
 
-6. **Event:** 79th Annual Deming Conference on Applied Statistics  
-   **Year:** 2023  
-   **Presentation Title:** Cell and Gene Therapy (CGT): Introduction and Overview of Important Regulatory, Statistical and Operational Considerations by Patricia Anderson, Revathi Ananthakrishnan, Shihua Wen
-
-
-7. **Event:** ASA Biopharmaceutical Section Regulatory-Industry Statistics Workshop  
-   **Year:** 2023  
-   **Presentation Title:** Challenges and Lessons Learned in Autologous CAR T-Cell Development from a Statistical Perspective by Daniel, Li  
-   **Date:** Sept 28, 2023
-
-
-8. **Event:** ASA BIOP CGT Roundtable  
-   **Year:** 2023  
-   **Presentation Title:** Considerations on the Design and Analysis for Early Phase Cell and Gene Therapy Studies
-
+```
