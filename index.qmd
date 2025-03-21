@@ -27,5 +27,5 @@ Daniel Li, BMS (daniel.li1@bms.com)
 
 # Link to this page
 
-Link to this page: <>.
+Link to this page: <https://asa-cellgenetx-wg.github.io/>.
 

@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 20, 2024</p>
+      <p class="date-modified">March 21, 2025</p>
     </div>
   </div>
     
@@ -171,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Daniel Li, BMS (daniel.li1@bms.com)</p>
 <section id="link-to-this-page" class="level1">
 <h1>Link to this page</h1>
-<p>Link to this page: &lt;&gt;.</p>
+<p>Link to this page: &lt;CellGeneTx-WG.github.io.git&gt;.</p>
 
 
 </section>
@@ -258,7 +258,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ASA-CellGeneTx-WG\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
