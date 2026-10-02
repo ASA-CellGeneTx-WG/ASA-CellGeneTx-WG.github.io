@@ -25,7 +25,7 @@ df <- as.data.frame(read_excel(paste(path, "/data/presentations.xlsx", sep = "")
 
 print_data <- function(df){
   n_row <- nrow(df)
-  for (ii in 1:n_row) {
+  for (ii in seq_len(n_row)) {
     if (!is.na(df$LINK[ii])){
       cat(glue::glue("{ii}. **Event**: {df$EVENT[ii]}  
      **Year**: {df$YEAR[ii]}  

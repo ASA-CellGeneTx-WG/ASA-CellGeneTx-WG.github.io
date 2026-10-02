@@ -11,13 +11,12 @@ project:
 
 website:
   title: "Cell and Gene Therapy working group"
+  site-url: https://asa-cellgenetx-wg.github.io/
   navbar:
     background: success
     left:
     - text: "About"
-      menu:
-        - text: "About"
-          href: index.html
+      href: index.html
     - text: "Sub-Teams"
       href: subteams.html
     - text: "Publications"

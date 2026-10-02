@@ -37,7 +37,6 @@ email <- as.data.frame(read_excel(paste(path, "/data/members.xlsx", sep = ""), c
 email$Lead_TF = tolower(email$Lead_TF)
 objectives <- as.data.frame(read_excel(paste(path, "/data/objectives.xlsx", sep = ""), col_types = NULL))
 objectives$taskforce = tolower(objectives$taskforce)
-active <- objectives$active
 
 ## Current month
 today <- Sys.Date()
@@ -60,6 +59,11 @@ taskforces_names <- c("Real World Evidence/Real World Data (RWE/RWD)",
                       "Trial Design",
                       "Long-Term Follow Up (LTFU)",
                       "Data Science and Artificial Intelligence")
+
+## Match each task force to its row in objectives.xlsx by name rather than by
+## position: that sheet holds rows (e.g. Safety) that are not in `taskforces`,
+## so row i of the sheet is not necessarily taskforces[i].
+active <- objectives$active[match(tolower(taskforces), objectives$taskforce)]
 ```
 
 
@@ -67,9 +71,9 @@ taskforces_names <- c("Real World Evidence/Real World Data (RWE/RWD)",
 ```{r, label = "activenew", echo = FALSE, message = FALSE, warning = FALSE, results = "asis"}
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out2 <- NULL
-for (i in 1:length(taskforces)){
-  
-  if (active[i] == 2){
+for (i in seq_along(taskforces)){
+
+  if (!is.na(active[i]) && active[i] == 2){
     out2 <- c(out2, knit_expand('tools/taskforce.Rmd'))
   }
 }

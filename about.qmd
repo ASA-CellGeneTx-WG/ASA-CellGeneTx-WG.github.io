@@ -1,8 +1,35 @@
 ---
-  title: "About This Website"
+title: "About This Website"
 ---
-  
-- Website for successR.
-- Index file to build website is _site.yml.
-- Use rmarkdown::render_site() or click on "Build" --> "Build site" to build the website.
-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html for background information.
+
+This is the website of the American Statistical Association (ASA) Cell and Gene
+Therapy Scientific Working Group. See the [home page](index.html) for an
+introduction to the group and contact details for the co-chairs.
+
+## How the site is built
+
+- The site is a [Quarto](https://quarto.org) website. `_quarto.yml` holds the
+  site configuration: the navigation bar, the theme, and the list of pages to
+  render.
+- Each page is a `.qmd` file in the repository root.
+- Run `quarto render` (or click *Render* in RStudio) to build the site. Output
+  is written to `docs/`, which is what GitHub Pages serves, so the rebuilt
+  `docs/` has to be committed for changes to appear online.
+
+## Where the content comes from
+
+Several pages are generated from spreadsheets in `data/` rather than from text
+in the `.qmd` file, so updating them does not require editing any code:
+
+| Page | Data file |
+|------|-----------|
+| [Sub-teams](subteams.html) | `data/members.xlsx`, `data/objectives.xlsx` |
+| [Presentations](presentations.html) | `data/presentations.xlsx` |
+
+Rendering these pages requires R together with the `readxl`, `dplyr`, `knitr`
+and `glue` packages. Helper functions used by the sub-teams page live in
+`tools/`.
+
+The [publications](publications.html) and [resources](resources.html) pages are
+plain Markdown and are edited directly in `publications.qmd` and
+`resources.qmd`.
