@@ -1,6 +1,8 @@
 project:
   type: website
-  output-dir: docs
+  # The built site is published by .github/workflows/publish.yml and is not
+  # committed; /_site/ is git-ignored.
+  output-dir: _site
   render:
     - about.qmd
     - index.qmd
@@ -12,8 +14,9 @@ project:
 website:
   title: "Cell and Gene Therapy working group"
   site-url: https://asa-cellgenetx-wg.github.io/
+  repo-url: https://github.com/ASA-CellGeneTx-WG/ASA-CellGeneTx-WG.github.io
   navbar:
-    background: success
+    pinned: true
     left:
     - text: "About"
       href: index.html
@@ -25,11 +28,26 @@ website:
       href: presentations.html
     - text: "Resources"
       href: resources.html
+    right:
+    - icon: github
+      href: https://github.com/ASA-CellGeneTx-WG/ASA-CellGeneTx-WG.github.io
+      aria-label: "Source on GitHub"
+  page-footer:
+    left: "ASA Cell and Gene Therapy Scientific Working Group"
+    right:
+    - text: "About this site"
+      href: about.html
+    - text: "GitHub"
+      href: https://github.com/ASA-CellGeneTx-WG/ASA-CellGeneTx-WG.github.io
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: theme-light.scss
+      dark: theme-dark.scss
     css: styles.css
     toc: true
+    anchor-sections: true
+    link-external-newwindow: true
 
 editor: source

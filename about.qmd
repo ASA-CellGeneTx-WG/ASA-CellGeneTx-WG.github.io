@@ -26,9 +26,9 @@ in the `.qmd` file, so updating them does not require editing any code:
 | [Sub-teams](subteams.html) | `data/members.xlsx`, `data/objectives.xlsx` |
 | [Presentations](presentations.html) | `data/presentations.xlsx` |
 
-Rendering these pages requires R together with the `readxl`, `dplyr`, `knitr`
-and `glue` packages. Helper functions used by the sub-teams page live in
-`tools/`.
+Rendering these pages requires R together with the `readxl`, `dplyr`, `knitr`,
+`glue`, `pander` and `reporttools` packages. Helper functions used by the
+sub-teams page live in `tools/`. The other pages need no R at all.
 
 The [publications](publications.html) and [resources](resources.html) pages are
 plain Markdown and are edited directly in `publications.qmd` and

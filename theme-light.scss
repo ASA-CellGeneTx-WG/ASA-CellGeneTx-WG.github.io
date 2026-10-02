@@ -1,0 +1,63 @@
+/*-- scss:defaults --*/
+
+// Typography ----------------------------------------------------------------
+// Inter when the visitor has it, otherwise the platform UI font. No webfont is
+// downloaded, so there is no third-party request and no flash of unstyled text.
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !default;
+$font-size-root: 17px !default;
+$line-height-base: 1.65 !default;
+$headings-font-weight: 650 !default;
+$headings-line-height: 1.25 !default;
+
+// Palette -------------------------------------------------------------------
+$teal-800: #115e59;
+$teal-700: #0f766e;
+$teal-600: #0d9488;
+
+$body-bg: #ffffff !default;
+$body-color: #1f2937 !default;
+
+$primary: $teal-700 !default;
+$link-color: $teal-600 !default;
+$link-hover-color: $teal-800 !default;
+
+// Components ----------------------------------------------------------------
+$border-radius: 0.6rem !default;
+$border-color: #e2e8f0 !default;
+
+$navbar-bg: #ffffff !default;
+$navbar-fg: #334155 !default;
+$navbar-hl: $teal-700 !default;
+
+$footer-bg: #f8fafc !default;
+$footer-fg: #64748b !default;
+
+$table-border-color: #e2e8f0 !default;
+$table-striped-bg: #f8fafc !default;
+$table-hover-bg: #f1f5f9 !default;
+
+$code-bg: #f8fafc !default;
+$code-color: #be185d !default;
+
+/*-- scss:rules --*/
+
+// Tokens consumed by styles.css, which holds the rules shared with dark mode.
+:root {
+  --cgt-surface: #ffffff;
+  --cgt-surface-alt: #f8fafc;
+  --cgt-border: #e2e8f0;
+  --cgt-border-strong: #cbd5e1;
+  --cgt-muted: #64748b;
+  --cgt-heading: #0f172a;
+  --cgt-accent: #0f766e;
+  --cgt-hero-text: #ffffff;
+  --cgt-hero-text-muted: rgba(255, 255, 255, 0.82);
+  --cgt-hero-gradient: linear-gradient(135deg, #0f766e 0%, #115e59 55%, #134e4a 100%);
+  --cgt-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --cgt-shadow-hover: 0 2px 4px rgba(15, 23, 42, 0.06), 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--cgt-border);
+}

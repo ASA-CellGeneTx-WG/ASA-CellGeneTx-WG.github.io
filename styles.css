@@ -1,1 +1,251 @@
-/* css styles */
+/* Shared component styles.
+   Colours come from the --cgt-* custom properties defined in theme-light.scss
+   and theme-dark.scss, so every rule below works in both modes. */
+
+/* Typography ------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--cgt-heading);
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--cgt-border);
+}
+
+main p,
+main li {
+  max-width: 68ch;
+}
+
+a {
+  text-decoration: none;
+}
+
+main a:not(.btn):not(.feature-card):hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* Hero ------------------------------------------------------------------- */
+
+.hero {
+  margin: 0 0 3rem;
+  padding: 3.5rem 2.5rem;
+  border-radius: 1rem;
+  background: var(--cgt-hero-gradient);
+  color: var(--cgt-hero-text);
+  box-shadow: var(--cgt-shadow);
+}
+
+.hero .hero-title {
+  max-width: 24ch;
+  margin: 0;
+  color: var(--cgt-hero-text);
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.hero p {
+  max-width: 54ch;
+  margin: 1.1rem 0 0;
+  color: var(--cgt-hero-text-muted);
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hero-actions a {
+  display: inline-block;
+  padding: 0.6rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 0.97rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-actions a:hover {
+  text-decoration: none;
+}
+
+.hero-actions .hero-btn-primary {
+  background: #ffffff;
+  color: #0f766e;
+}
+
+.hero-actions .hero-btn-primary:hover {
+  background: #e6fffa;
+}
+
+.hero-actions .hero-btn-ghost {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--cgt-hero-text);
+}
+
+.hero-actions .hero-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Section cards ---------------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin: 0 0 1rem;
+}
+
+a.feature-card {
+  display: block;
+  height: 100%;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--cgt-border);
+  border-radius: 0.75rem;
+  background: var(--cgt-surface);
+  box-shadow: var(--cgt-shadow);
+  color: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+a.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cgt-accent);
+  box-shadow: var(--cgt-shadow-hover);
+  text-decoration: none;
+}
+
+.feature-card .feature-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+  color: var(--cgt-heading);
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+
+.feature-card .feature-arrow {
+  color: var(--cgt-accent);
+  font-weight: 400;
+  transition: transform 0.15s ease;
+}
+
+a.feature-card:hover .feature-arrow {
+  transform: translateX(3px);
+}
+
+.feature-card .feature-desc {
+  display: block;
+  color: var(--cgt-muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Contact block ---------------------------------------------------------- */
+
+.contact-list {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  max-width: none;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--cgt-border);
+  border-left: 3px solid var(--cgt-accent);
+  border-radius: 0.5rem;
+  background: var(--cgt-surface-alt);
+}
+
+.contact-list .contact-name {
+  display: block;
+  color: var(--cgt-heading);
+  font-weight: 650;
+}
+
+.contact-list .contact-org {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--cgt-muted);
+  font-size: 0.9rem;
+}
+
+.contact-list a {
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+/* Tables ----------------------------------------------------------------- */
+
+main table {
+  width: 100%;
+  margin: 1.25rem 0 2rem;
+  border: 1px solid var(--cgt-border);
+  border-radius: 0.5rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+main thead th {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--cgt-border-strong);
+  background: var(--cgt-surface-alt);
+  color: var(--cgt-heading);
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+main tbody td {
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid var(--cgt-border);
+}
+
+main tbody tr:first-child td {
+  border-top: none;
+}
+
+/* Lists on the data-driven pages ----------------------------------------- */
+
+/* The presentations page emits one paragraph-heavy list item per talk. */
+main ol > li {
+  margin-bottom: 1.15rem;
+}
+
+/* Footer ----------------------------------------------------------------- */
+
+.nav-footer {
+  border-top: 1px solid var(--cgt-border);
+  font-size: 0.9rem;
+}
+
+/* Narrow screens --------------------------------------------------------- */
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 2.5rem 1.4rem;
+    border-radius: 0.75rem;
+  }
+}

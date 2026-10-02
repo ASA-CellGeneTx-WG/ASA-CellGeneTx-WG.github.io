@@ -1,0 +1,85 @@
+name: Publish site
+
+on:
+  # Rebuild whenever the source or the spreadsheets change on main. A commit
+  # pushed by the Power Automate flow (see README) lands here too.
+  push:
+    branches: [main]
+    paths:
+      - "**.qmd"
+      - "_quarto.yml"
+      - "styles.css"
+      - "theme-*.scss"
+      - "data/**"
+      - "tools/**"
+      - ".github/workflows/publish.yml"
+  # "Run workflow" button, for republishing without a content change.
+  workflow_dispatch:
+  # Lets an external system ask for a rebuild without pushing a commit:
+  #   POST /repos/:owner/:repo/dispatches  {"event_type": "data-updated"}
+  repository_dispatch:
+    types: [data-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue them instead of cancelling, so a data push
+# that arrives mid-build still gets published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          # Pinned for reproducible builds. Bump deliberately.
+          version: 1.10.18
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          # Install CRAN packages as precompiled binaries rather than from
+          # source; without this the build takes tens of minutes.
+          use-public-rspm: true
+
+      - name: Install R packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          # subteams.qmd loads knitr, pander, reporttools, dplyr and readxl;
+          # presentations.qmd additionally uses glue.
+          packages: |
+            any::knitr
+            any::rmarkdown
+            any::dplyr
+            any::readxl
+            any::glue
+            any::pander
+            any::reporttools
+
+      - name: Render site
+        run: quarto render
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
