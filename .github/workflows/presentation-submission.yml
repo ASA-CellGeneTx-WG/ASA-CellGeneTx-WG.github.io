@@ -101,16 +101,30 @@ jobs:
           BODY=$(printf 'Adds a row to `data/presentations.csv`.\n\n%s\n\nSubmitted by @%s in #%s.\n\nMerging this republishes the site automatically.' \
             "$ROW_SUMMARY" "$ISSUE_AUTHOR" "$ISSUE_NUMBER")
 
+          # Opening the pull request needs "Allow GitHub Actions to create and
+          # approve pull requests" (Settings -> Actions -> General). If that is
+          # off, the branch is still pushed, so fall back to handing a maintainer
+          # the compare link rather than failing the run.
           if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
             gh pr edit "$BRANCH" --body "$BODY"
+            OPENED=yes
+          elif gh pr create --base main --head "$BRANCH" \
+                 --title "Add presentation: ${ROW_TITLE}" --body "$BODY"; then
+            OPENED=yes
           else
-            gh pr create --base main --head "$BRANCH" \
-              --title "Add presentation: ${ROW_TITLE}" --body "$BODY"
+            OPENED=no
           fi
 
-          URL=$(gh pr view "$BRANCH" --json url --jq .url)
-          gh issue comment "$ISSUE_NUMBER" \
-            --body "Thanks! I opened ${URL} with this entry. A maintainer will review it, and the site republishes once it is merged."
+          if [ "$OPENED" = yes ]; then
+            URL=$(gh pr view "$BRANCH" --json url --jq .url)
+            gh issue comment "$ISSUE_NUMBER" --body \
+              "Thanks! I opened ${URL} with this entry. A maintainer will review it, and the site republishes once it is merged."
+          else
+            COMPARE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
+            printf 'Thanks! I prepared this entry on branch `%s`.\n\n%s\n\nThis repository does not allow GitHub Actions to open pull requests, so a maintainer needs to open it here: %s\n' \
+              "$BRANCH" "$ROW_SUMMARY" "$COMPARE" > pr_fallback.md
+            gh issue comment "$ISSUE_NUMBER" --body-file pr_fallback.md
+          fi
 
       - name: Report a problem back to the submitter
         if: failure()
@@ -120,11 +134,13 @@ jobs:
           ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          # Only a parse failure is the submitter's to fix; anything else is a
+          # repository problem and saying "edit the issue" would be misleading.
           if [ -f parse_error.md ]; then
-            REASON=$(cat parse_error.md)
+            printf 'I could not add this entry.\n\n%s\n\nEdit the issue and I will try again automatically.\n' \
+              "$(cat parse_error.md)" > comment.md
           else
-            REASON="See the [workflow log](${RUN_URL}) for details."
+            printf 'Your submission parsed correctly, but the workflow failed afterwards, so this is not something you need to fix. A maintainer should check the [run log](%s).\n' \
+              "$RUN_URL" > comment.md
           fi
-          printf 'I could not add this entry.\n\n%s\n\nEdit the issue and I will try again automatically.\n' \
-            "$REASON" > comment.md
           gh issue comment "$ISSUE_NUMBER" --body-file comment.md
