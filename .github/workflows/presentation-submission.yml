@@ -4,7 +4,14 @@ name: Presentation submission
 # data/presentations.csv. Nothing is published until a maintainer merges it.
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, labeled]
+  # Escape hatch: process an issue that was opened before this workflow worked,
+  # or re-run one without editing it.
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Issue number to process
+        required: true
 
 permissions:
   contents: write
@@ -12,32 +19,66 @@ permissions:
   issues: write
 
 concurrency:
-  # One in-flight run per issue; a quick edit supersedes the earlier parse.
-  group: presentation-${{ github.event.issue.number }}
+  group: presentation-${{ github.event.issue.number || inputs.issue }}
   cancel-in-progress: true
 
 jobs:
   to-pull-request:
-    if: contains(github.event.issue.labels.*.name, 'presentation-submission')
+    # Recognise a submission by its body, not by its label or title: issue forms
+    # drop `labels:` entries for labels that do not already exist in the repo,
+    # and the title is only a prefill that submitters routinely replace.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'presentation-submission') ||
+      (contains(github.event.issue.body, '### Year') &&
+       contains(github.event.issue.body, '### Speakers'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Resolve the issue
+        id: issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number || inputs.issue }}
+        run: |
+          set -euo pipefail
+          echo "number=${NUMBER}" >> "$GITHUB_OUTPUT"
+          # Written to a file rather than an output or env var: the body is
+          # untrusted input from a public form and must never be interpolated
+          # into a shell command.
+          gh issue view "$NUMBER" --json body  --jq .body         > issue_body.txt
+          gh issue view "$NUMBER" --json author --jq .author.login > issue_author.txt
+          echo "author=$(cat issue_author.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Label the issue
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ steps.issue.outputs.number }}
+        run: |
+          # Create the label on first use; issue forms cannot create it themselves.
+          gh label create presentation-submission \
+            --color 0E8A16 \
+            --description "Submitted through the Add a presentation form" \
+            2>/dev/null || true
+          gh issue edit "$NUMBER" --add-label presentation-submission
+
       - name: Parse the submission into a CSV row
         id: parse
         env:
-          # Passed as an environment variable, never interpolated into the
-          # shell: the body is untrusted input from a public form.
-          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_BODY_FILE: issue_body.txt
           ERROR_FILE: parse_error.md
         run: python3 .github/scripts/add_presentation.py
 
       - name: Open or update the pull request
-        if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          ISSUE_AUTHOR: ${{ steps.issue.outputs.author }}
           ROW_TITLE: ${{ steps.parse.outputs.title }}
           ROW_SUMMARY: ${{ steps.parse.outputs.summary }}
         run: |
@@ -50,24 +91,21 @@ jobs:
           git add data/presentations.csv
 
           if git diff --cached --quiet; then
-            echo "No change to commit."
+            echo "Nothing to commit; presentations.csv already matches."
             exit 0
           fi
 
           git commit -m "Add presentation from issue #${ISSUE_NUMBER}"
           git push --force origin "$BRANCH"
 
-          BODY=$(printf '%s\n\n%s\n\nSubmitted by @%s in #%s.\n\nMerging this republishes the site automatically.' \
-            "Adds a row to \`data/presentations.csv\`." "$ROW_SUMMARY" "$ISSUE_AUTHOR" "$ISSUE_NUMBER")
+          BODY=$(printf 'Adds a row to `data/presentations.csv`.\n\n%s\n\nSubmitted by @%s in #%s.\n\nMerging this republishes the site automatically.' \
+            "$ROW_SUMMARY" "$ISSUE_AUTHOR" "$ISSUE_NUMBER")
 
           if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
             gh pr edit "$BRANCH" --body "$BODY"
-            echo "Updated existing pull request."
           else
-            gh pr create \
-              --base main --head "$BRANCH" \
-              --title "Add presentation: ${ROW_TITLE}" \
-              --body "$BODY"
+            gh pr create --base main --head "$BRANCH" \
+              --title "Add presentation: ${ROW_TITLE}" --body "$BODY"
           fi
 
           URL=$(gh pr view "$BRANCH" --json url --jq .url)
@@ -78,12 +116,15 @@ jobs:
         if: failure()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          REASON="See the [workflow log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
-          if [ -f parse_error.md ]; then REASON=$(cat parse_error.md); fi
-          gh issue comment "$ISSUE_NUMBER" --body "I could not add this entry.
-
-          $REASON
-
-          Edit the issue and I will try again automatically."
+          if [ -f parse_error.md ]; then
+            REASON=$(cat parse_error.md)
+          else
+            REASON="See the [workflow log](${RUN_URL}) for details."
+          fi
+          printf 'I could not add this entry.\n\n%s\n\nEdit the issue and I will try again automatically.\n' \
+            "$REASON" > comment.md
+          gh issue comment "$ISSUE_NUMBER" --body-file comment.md

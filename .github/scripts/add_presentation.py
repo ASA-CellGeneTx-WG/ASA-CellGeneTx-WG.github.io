@@ -86,8 +86,18 @@ def clean(column, value):
     return value
 
 
+def read_body():
+    """Prefer a file; the workflow writes the body there so that it is never
+    interpolated into a shell command."""
+    path = os.environ.get("ISSUE_BODY_FILE")
+    if path and os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            return fh.read()
+    return os.environ.get("ISSUE_BODY", "")
+
+
 def main():
-    body = os.environ.get("ISSUE_BODY", "")
+    body = read_body()
     if not body.strip():
         fail("The issue body was empty, so there was nothing to parse.")
 
