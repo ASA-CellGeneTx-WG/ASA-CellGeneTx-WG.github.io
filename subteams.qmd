@@ -33,7 +33,12 @@ source(file = paste(path, "/tools/obj.r", sep = ""))
 ## =================================================================
 ## member list
 ## =================================================================
-email <- as.data.frame(read_excel(paste(path, "/data/members.xlsx", sep = ""), col_types = NULL))
+## na.strings makes blank cells NA rather than "", matching the behaviour the
+## code relied on when this was read from .xlsx: the task force columns are
+## selected with is.na(), and a "" would read as membership.
+email <- read.csv(paste(path, "/data/members.csv", sep = ""),
+                  stringsAsFactors = FALSE, na.strings = c("", "NA"),
+                  check.names = FALSE)
 email$Lead_TF = tolower(email$Lead_TF)
 objectives <- as.data.frame(read_excel(paste(path, "/data/objectives.xlsx", sep = ""), col_types = NULL))
 objectives$taskforce = tolower(objectives$taskforce)

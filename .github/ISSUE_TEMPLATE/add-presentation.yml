@@ -1,0 +1,77 @@
+name: Add a presentation
+description: Record a talk, short course, panel or poster the working group contributed to
+title: "[Presentation] "
+labels: ["presentation-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this in and submit. A maintainer reviews the pull request that gets
+        opened automatically — you do not need to edit any files yourself.
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2026"
+    validations:
+      required: true
+  - type: input
+    id: event
+    attributes:
+      label: Event
+      description: Conference, workshop or chapter meeting
+      placeholder: Joint Statistical Meetings (JSM)
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Presentation
+        - Short course
+        - Round table
+        - Parallel session
+        - Contributed Panel Session
+        - Invited session
+        - Poster
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: speaker
+    attributes:
+      label: Speakers
+      description: Comma-separated, in the order they should appear
+      placeholder: Patricia Anderson, Revathi Ananthakrishnan
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: Statistical Considerations in Cell and Gene Therapy Development
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: YYYY-MM-DD
+      placeholder: "2026-08-02"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: Nashville, TN
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Optional. URL for the programme, abstract or recording.
+    validations:
+      required: false

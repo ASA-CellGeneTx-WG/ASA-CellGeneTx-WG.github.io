@@ -1,0 +1,89 @@
+name: Presentation submission
+
+# Turns an "Add a presentation" issue into a pull request against
+# data/presentations.csv. Nothing is published until a maintainer merges it.
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  # One in-flight run per issue; a quick edit supersedes the earlier parse.
+  group: presentation-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  to-pull-request:
+    if: contains(github.event.issue.labels.*.name, 'presentation-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse the submission into a CSV row
+        id: parse
+        env:
+          # Passed as an environment variable, never interpolated into the
+          # shell: the body is untrusted input from a public form.
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ERROR_FILE: parse_error.md
+        run: python3 .github/scripts/add_presentation.py
+
+      - name: Open or update the pull request
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ROW_TITLE: ${{ steps.parse.outputs.title }}
+          ROW_SUMMARY: ${{ steps.parse.outputs.summary }}
+        run: |
+          set -euo pipefail
+          BRANCH="presentation/issue-${ISSUE_NUMBER}"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add data/presentations.csv
+
+          if git diff --cached --quiet; then
+            echo "No change to commit."
+            exit 0
+          fi
+
+          git commit -m "Add presentation from issue #${ISSUE_NUMBER}"
+          git push --force origin "$BRANCH"
+
+          BODY=$(printf '%s\n\n%s\n\nSubmitted by @%s in #%s.\n\nMerging this republishes the site automatically.' \
+            "Adds a row to \`data/presentations.csv\`." "$ROW_SUMMARY" "$ISSUE_AUTHOR" "$ISSUE_NUMBER")
+
+          if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
+            gh pr edit "$BRANCH" --body "$BODY"
+            echo "Updated existing pull request."
+          else
+            gh pr create \
+              --base main --head "$BRANCH" \
+              --title "Add presentation: ${ROW_TITLE}" \
+              --body "$BODY"
+          fi
+
+          URL=$(gh pr view "$BRANCH" --json url --jq .url)
+          gh issue comment "$ISSUE_NUMBER" \
+            --body "Thanks! I opened ${URL} with this entry. A maintainer will review it, and the site republishes once it is merged."
+
+      - name: Report a problem back to the submitter
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          REASON="See the [workflow log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
+          if [ -f parse_error.md ]; then REASON=$(cat parse_error.md); fi
+          gh issue comment "$ISSUE_NUMBER" --body "I could not add this entry.
+
+          $REASON
+
+          Edit the issue and I will try again automatically."

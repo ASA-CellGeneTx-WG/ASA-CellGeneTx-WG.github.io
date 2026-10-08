@@ -18,13 +18,17 @@ introduction to the group and contact details for the co-chairs.
 
 ## Where the content comes from
 
-Several pages are generated from spreadsheets in `data/` rather than from text
-in the `.qmd` file, so updating them does not require editing any code:
+Several pages are generated from data files in `data/` rather than from text in
+the `.qmd` file, so updating them does not require editing any code:
 
 | Page | Data file |
 |------|-----------|
-| [Sub-teams](subteams.html) | `data/members.xlsx`, `data/objectives.xlsx` |
-| [Presentations](presentations.html) | `data/presentations.xlsx` |
+| [Sub-teams](subteams.html) | `data/members.csv`, `data/objectives.xlsx` |
+| [Presentations](presentations.html) | `data/presentations.csv` |
+
+New presentations can be submitted through an issue form in the repository,
+which opens a pull request automatically; see the
+[README](https://github.com/ASA-CellGeneTx-WG/ASA-CellGeneTx-WG.github.io#adding-a-presentation).
 
 Rendering these pages requires R together with the `readxl`, `dplyr`, `knitr`,
 `glue`, `pander` and `reporttools` packages. Helper functions used by the

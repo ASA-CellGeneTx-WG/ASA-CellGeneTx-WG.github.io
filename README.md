@@ -9,8 +9,8 @@ The site is a [Quarto](https://quarto.org) website. `.github/workflows/publish.y
 renders it and deploys it to GitHub Pages:
 
 ```
-data/*.xlsx  ──►  quarto render  ──►  _site/  ──►  GitHub Pages
-  (+ *.qmd)        (GitHub Actions)
+data/  ──►  quarto render  ──►  _site/  ──►  GitHub Pages
+ (+ *.qmd)   (GitHub Actions)
 ```
 
 The rendered output is **not** committed. `_site/` is git-ignored and exists only
@@ -36,81 +36,57 @@ other pages need no R.
 
 ## Updating content
 
-| Page | Edit |
-|------|------|
-| Sub-teams | `data/members.xlsx`, `data/objectives.xlsx` |
-| Presentations | `data/presentations.xlsx` |
-| Publications | `publications.qmd` |
-| Resources | `resources.qmd` |
-| Home | `index.qmd` |
+This repository is the source of truth. Edit the files here and the site
+republishes on merge to `main`.
 
-`data/members.xlsx` column notes: the first sheet in workbook order is the one
-that is read. A task force appears on the site only if its name is listed in the
-`taskforces` vector in `subteams.qmd` **and** its row in `objectives.xlsx` has
-`active = 2`. `Lead_TF` names the task force a person leads; `Firstname`,
-`Lastname` and `Institution` are the only columns rendered.
+| Page | Source | How to edit |
+|------|--------|-------------|
+| Presentations | `data/presentations.csv` | Open an [Add a presentation](../../issues/new?template=add-presentation.yml) issue, or edit the CSV directly |
+| Sub-teams | `data/members.csv`, `data/objectives.xlsx` | Edit the CSV in the browser; download/upload the workbook |
+| Publications | `publications.qmd` | Edit in the browser |
+| Resources | `resources.qmd` | Edit in the browser |
+| Home | `index.qmd` | Edit in the browser |
 
-## Syncing the spreadsheets from Teams
+The two member-facing files are CSV so that GitHub renders them as tables, shows
+line-level diffs, allows in-browser editing and can merge concurrent edits —
+none of which works with `.xlsx`.
 
-The working group maintains the workbooks in a Teams channel. A Teams channel's
-files live in a SharePoint document library, so a scheduled Power Automate flow
-copies them into `data/` here, and the resulting commit triggers the workflow
-above.
+### Adding a presentation
 
-The flow compares content before writing, so an unchanged workbook produces no
-commit and no rebuild.
+A member fills in the issue form; `.github/workflows/presentation-submission.yml`
+parses it, appends a row to `data/presentations.csv` and opens a pull request.
+Merging it republishes the site. Submitters never touch a data file, and nothing
+goes live without review.
 
-### One-time setup
+The form requires a GitHub account. If a member does not have one, send the
+details to a maintainer, who can add the row by editing the CSV in the browser.
 
-**1. Create a GitHub token.** Settings → Developer settings → Personal access
-tokens → Fine-grained tokens. Scope it to this repository only, and grant
-*Repository permissions → Contents: Read and write*. Note the expiry date and set
-a calendar reminder — the flow fails silently-ish when the token lapses. A GitHub
-App installation token avoids expiry if you would rather not rotate.
+Editing the issue re-runs the parse and updates the same pull request. If a
+submission is rejected — bad date, duplicate entry, a field that would behave as
+a spreadsheet formula — the workflow comments on the issue explaining why.
 
-**2. Build the flow.** In Power Automate, create a **scheduled cloud flow**
-(hourly is plenty). For each workbook:
+### Notes on the data files
 
-| Step | Action | Notes |
-|------|--------|-------|
-| 1 | SharePoint → *Get file content using path* | Path of the workbook in the channel's library |
-| 2 | HTTP → `GET https://api.github.com/repos/ASA-CellGeneTx-WG/ASA-CellGeneTx-WG.github.io/contents/data/<name>.xlsx` | Returns the current `sha` and base64 `content` |
-| 3 | Condition | Compare step 2's `content` with `base64(body('Get_file_content'))`, after stripping whitespace from both — GitHub wraps its base64 in newlines |
-| 4 | HTTP → `PUT .../contents/data/<name>.xlsx` | Only on the "different" branch |
+`data/members.csv` — one row per person. `Lead_TF` names the task force a person
+leads. The task-force columns (`RWE` … `DSAI`) mark membership with a `1`; blank
+means not a member. Only `Firstname`, `Lastname` and `Institution` are rendered.
 
-Headers for the HTTP actions:
+`data/objectives.xlsx` — still a workbook because the objectives are
+multi-paragraph text with bullet structure, which survives editing better in
+Excel than in CSV. `read_excel` is called without a `sheet=` argument, so only
+the first sheet in workbook order is read.
 
-```
-Authorization: Bearer <token>
-Accept: application/vnd.github+json
-X-GitHub-Api-Version: 2022-11-28
-```
+A task force appears on the site only if its name is listed in the `taskforces`
+vector in `subteams.qmd` **and** its row in `objectives.xlsx` has `active = 2`.
 
-Body for step 4:
+### A note for maintainers
 
-```json
-{
-  "message": "Update <name>.xlsx from Teams",
-  "content": "<base64 of the SharePoint file>",
-  "sha": "<sha from step 2>",
-  "branch": "main"
-}
-```
+This repository is public, so anything committed under `data/` is world-readable
+and stays in the git history. Member email addresses were removed from the member
+list in October 2026 for this reason; the site never rendered them. Please keep
+contact details out of this repository.
 
-The `sha` is required — it is how GitHub detects a conflicting concurrent edit.
-
-### Things worth knowing
-
-- **The HTTP action is a premium Power Automate connector.** If the licence is
-  not available, the alternative is to invert the direction: have the workflow
-  pull the files from SharePoint via Microsoft Graph on a schedule, which needs
-  an Entra app registration with `Sites.Selected` plus a client secret stored as
-  a GitHub Actions secret.
-- **Prefer a schedule over an on-modified trigger.** Excel autosaves, so a
-  "when a file is modified" trigger fires repeatedly during a single editing
-  session and produces a burst of commits.
-- **This repository is public.** Anything pushed into `data/` is world-readable
-  and stays in the git history. `members.xlsx` carries member email addresses in
-  its `email`/`email2` columns; the site never renders them, so removing those
-  columns from the workbook that gets synced costs nothing and keeps them out of
-  a public repository.
+An earlier plan synced the workbooks from the group's Teams channel via Power
+Automate. That was dropped in favour of editing here directly: it needed a
+premium connector licence, and having two copies of the data meant one of them
+was always the stale one. The write-up is in the git history if it is ever needed.

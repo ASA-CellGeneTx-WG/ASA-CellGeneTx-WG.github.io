@@ -15,12 +15,16 @@ Here we list the presentations that the group has contributed to.
 
 
 ```{r, message=FALSE, echo=FALSE, warning=FALSE, results='asis'}
-library(readxl)
 path <- getwd()
 ## =================================================================
-## member list
+## presentation list
 ## =================================================================
-df <- as.data.frame(read_excel(paste(path, "/data/presentations.xlsx", sep = ""), col_types = NULL))
+## na.strings makes blank cells NA rather than "", matching the behaviour the
+## code relied on when this was read from .xlsx; check.names keeps the headers
+## exactly as they appear in the file.
+df <- read.csv(paste(path, "/data/presentations.csv", sep = ""),
+               stringsAsFactors = FALSE, na.strings = c("", "NA"),
+               check.names = FALSE)
 
 
 print_data <- function(df){
@@ -29,7 +33,7 @@ print_data <- function(df){
     if (!is.na(df$LINK[ii])){
       cat(glue::glue("{ii}. **Event**: {df$EVENT[ii]}  
      **Year**: {df$YEAR[ii]}  
-     **Title**: {df$`PRESENTATION TITLE`[ii]} by {df$`SPEAKER/AUTHOR/ORGANIZER`[ii]}  
+     **Title**: {df$TITLE[ii]} by {df$SPEAKER[ii]}  
      **Location**: {df$LOCATION[ii]}  
      [**Link**]({df$LINK[ii]})  
      \n\n")
@@ -37,7 +41,7 @@ print_data <- function(df){
     } else {
       cat(glue::glue("{ii}. **Event**: {df$EVENT[ii]}  
      **Year**: {df$YEAR[ii]}  
-     **Title**: {df$`PRESENTATION TITLE`[ii]} by {df$`SPEAKER/AUTHOR/ORGANIZER`[ii]}  
+     **Title**: {df$TITLE[ii]} by {df$SPEAKER[ii]}  
      **Location**: {df$LOCATION[ii]}
      \n\n")
       )
