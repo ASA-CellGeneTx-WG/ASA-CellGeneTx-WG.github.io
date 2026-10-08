@@ -146,8 +146,9 @@ def main():
         )
 
     existing.append(row)
-    # Keep the file in date order so the rendered page reads chronologically.
-    existing.sort(key=lambda r: r.get("DATE", ""))
+    # Newest first, matching the order the page renders in, so the file reads
+    # the same way as the site and a new entry lands at the top.
+    existing.sort(key=lambda r: r.get("DATE", ""), reverse=True)
 
     with open(CSV_PATH, "w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=COLUMNS, lineterminator="\n")

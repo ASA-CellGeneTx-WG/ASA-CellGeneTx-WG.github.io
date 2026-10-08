@@ -13,11 +13,21 @@ output:
 
 Here we list the publications that the group has written or contributed to.
 
+<!-- Newest first. Add new entries at the top of the relevant section. -->
+
 # Accepted or published
 
-Li, D., Xu, Z., Wen, S., Ananthakrishnan, R., Kim, Y., Rantell, K.R., Anderson, P., Whitmore, J. and Chiang, A., 2024. _Challenges and Lessons Learned in Autologous Chimeric Antigen Receptor T-Cell Therapy Development from a Statistical Perspective_. Therapeutic Innovation & Regulatory Science, pp.1-14. | [doi](https://link.springer.com/article/10.1007/s43441-024-00652-3) | 
+Li, D., Xu, Z., Wen, S., Ananthakrishnan, R., Kim, Y., Rantell, K.R., Anderson,
+P., Whitmore, J. and Chiang, A., 2024. _Challenges and Lessons Learned in
+Autologous Chimeric Antigen Receptor T-Cell Therapy Development from a
+Statistical Perspective_. Therapeutic Innovation & Regulatory Science, 58(5),
+pp.817–830. [doi](https://doi.org/10.1007/s43441-024-00652-3)
 
-McIntosh, A. and Sverdlov, O. eds., 2024. Development of Gene Therapies: Strategic, Scientific, Regulatory, and Access Considerations. CRC Press.
+McIntosh, A. and Sverdlov, O. eds., 2024. _Development of Gene Therapies:
+Strategic, Scientific, Regulatory, and Access Considerations_. Chapman and
+Hall/CRC. [doi](https://doi.org/10.1201/9781003230342)
 
 # Submitted
+
+_Nothing under review at present._
 

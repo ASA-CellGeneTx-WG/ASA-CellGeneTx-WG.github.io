@@ -26,6 +26,11 @@ df <- read.csv(paste(path, "/data/presentations.csv", sep = ""),
                stringsAsFactors = FALSE, na.strings = c("", "NA"),
                check.names = FALSE)
 
+## Newest first. DATE is an ISO string, so a plain sort is chronological.
+## Done here as well as in the file so that a hand-edited row out of order
+## still lands in the right place on the page.
+df <- df[order(df$DATE, decreasing = TRUE, na.last = TRUE), ]
+
 
 print_data <- function(df){
   n_row <- nrow(df)

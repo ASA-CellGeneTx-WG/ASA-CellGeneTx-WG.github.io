@@ -61,6 +61,9 @@ goes live without review.
 The form requires a GitHub account. If a member does not have one, send the
 details to a maintainer, who can add the row by editing the CSV in the browser.
 
+Rows are kept newest-first, in both the file and the rendered page, so a new
+entry lands at the top.
+
 Editing the issue re-runs the parse and updates the same pull request. If a
 submission is rejected — bad date, duplicate entry, a field that would behave as
 a spreadsheet formula — the workflow comments on the issue explaining why.
