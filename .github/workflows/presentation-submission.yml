@@ -98,7 +98,9 @@ jobs:
           git commit -m "Add presentation from issue #${ISSUE_NUMBER}"
           git push --force origin "$BRANCH"
 
-          BODY=$(printf 'Adds a row to `data/presentations.csv`.\n\n%s\n\nSubmitted by @%s in #%s.\n\nMerging this republishes the site automatically.' \
+          # "Closes #n" makes merging the pull request close the submission
+          # issue, so the issue list does not accumulate processed entries.
+          BODY=$(printf 'Adds a row to `data/presentations.csv`.\n\n%s\n\nSubmitted by @%s.\n\nCloses #%s\n\nMerging this republishes the site automatically.' \
             "$ROW_SUMMARY" "$ISSUE_AUTHOR" "$ISSUE_NUMBER")
 
           # Opening the pull request needs "Allow GitHub Actions to create and
