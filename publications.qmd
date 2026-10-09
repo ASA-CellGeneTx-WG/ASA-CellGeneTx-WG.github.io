@@ -1,21 +1,81 @@
 ---
 title: "Publications of the group"
 date-modified: last-modified
-output: 
-  rmarkdown::html_document:
-    highlight: pygments
-    number_sections: yes
-    self_contained: yes
-    toc: yes
-    toc_depth: 3
-    toc_float: yes
 ---
 
 Here we list the publications that the group has written or contributed to.
 
-<!-- Newest first. Add new entries at the top of the relevant section. -->
+<!-- Newest first, grouped by year. Add new entries at the top of their year.
+     For a paper that is still advance online publication, cite it as such
+     rather than using the placeholder page range, which gets superseded once
+     the volume and issue are assigned. -->
 
 # Accepted or published
+
+## 2026
+
+Roberts, K., Palmer, J., Volpe, J., Zhong, W. and McIntosh, A., 2026.
+_Quantitative Dose Optimization for Gene Therapy Trials: Implications for
+Project Optimus and Early-Phase Design_. Pharmaceutical Statistics, 25(5).
+[doi](https://doi.org/10.1002/pst.70113)
+
+Anderson, P., Ananthakrishnan, R., Xu, Z., Rantell, K.R., Bell, S., Li, D., Xue,
+A. and Chiang, A.Y., 2026. _Statistical analysis plan considerations for
+autologous cell and cell-based gene therapy clinical trials_. Journal of
+Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2685280)
+
+Ananthakrishnan, R., Adiwijaya, B., Chiang, A.Y., Han, C., He, Q.A.,
+Lewandowski, A., Liu, R., Shen, F., Sun, H. and Li, D., 2026. _Overview of dose-
+finding designs and trials in cell and gene therapies_. Journal of
+Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2684622)
+
+Anderson, P., Xu, Z., Degtyarev, E., Ananthakrishnan, R., Ballarini, N., He, A.,
+Zhang, W. and Li, D., 2026. _Pivotal trial design considerations for new and
+next generation cell and gene therapies_. Journal of Biopharmaceutical
+Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2670523)
+
+Choi, S. and Dave, K., 2026. _A systematic analysis of the inherent dose
+uncertainty in autologous CAR T-cell products_. Journal of Biopharmaceutical
+Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2664711)
+
+Kang, R., Yamaguchi, Y. and Han, C., 2026. _Bayesian quantitative decision-
+making framework in cell and gene therapy development for rare diseases_.
+Journal of Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2655410)
+
+Kim, Y., Wen, S., Rantell, K.R., Xu, Z. and Anderson, P., 2026. _Real-world data
+and evidence in the development of cell and gene therapies_. Journal of
+Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2648311)
+
+Speth, K., Sengupta, S., Shamsuzzaman, M., Whitmore, J., Li, D., Chiang, A.Y.,
+Xu, Z. and Song, Q., 2026. _Advancing cell and gene therapy: Application of
+AI/ML in clinical development and patient management_. Journal of
+Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2026.2629434)
+
+Choi, S., Chiang, A.Y., Cheng, C., Dai, T., Yeh, T.M. and Pikounis, B., 2026.
+_Applications of correlative analysis for chemistry, manufacturing and controls
+in cell and gene therapy_. Journal of Biopharmaceutical Statistics. Advance
+online publication. [doi](https://doi.org/10.1080/10543406.2026.2627384)
+
+## 2025
+
+Wen, S., Anderson, P., Duan, R., Sverdlov, O. and Chiang, A.Y., 2025. _Estimands
+for long-term follow-up trials in gene therapy products_. Journal of
+Biopharmaceutical Statistics. Advance online publication.
+[doi](https://doi.org/10.1080/10543406.2025.2592619)
+
+Yi, S., Wu, C., McIntosh, A., Santaella, M.E., Robinson, T.M. and Liao, M.Z.,
+2025. _Cell and Gene Therapy: Transforming Treatment Paradigms for Patient-
+Centric Care_. Clinical and Translational Science, 18(12).
+[doi](https://doi.org/10.1111/cts.70430)
+
+## 2024
 
 Li, D., Xu, Z., Wen, S., Ananthakrishnan, R., Kim, Y., Rantell, K.R., Anderson,
 P., Whitmore, J. and Chiang, A., 2024. _Challenges and Lessons Learned in
@@ -30,4 +90,3 @@ Hall/CRC. [doi](https://doi.org/10.1201/9781003230342)
 # Submitted
 
 _Nothing under review at present._
-
